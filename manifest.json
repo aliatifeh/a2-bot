@@ -1,0 +1,52 @@
+{
+  "name": "A2 Quotex Bot Web",
+  "short_name": "A2Bot",
+  "description": "ربات سیگنال‌دهی حرفه‌ای برای بروکر Quotex",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#2c3e50",
+  "theme_color": "#3498db",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "./assets/icons/icon72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "./assets/icons/icon96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "./assets/icons/icon128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "./assets/icons/icon144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "./assets/icons/icon152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "./assets/icons/icon192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./assets/icons/icon384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "./assets/icons/icon512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

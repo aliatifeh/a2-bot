@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A2 Quotex Bot Web</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="icon" type="image/png" href="./assets/icons/icon48.png">
+    <meta name="theme-color" content="#2c3e50">
+    <meta name="description" content="ربات سیگنال‌دهی حرفه‌ای برای بروکر Quotex - نسخه وب">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-robot"></i> A2 QUOTEX BOT WEB</h1>
+            <small>تایم‌فریم: ۱ دقیقه</small>
+            <div class="connection-status" id="connectionStatus"></div>
+        </header>
+        
+        <div class="card license-section" id="licenseSection">
+            <h3><i class="fas fa-key"></i> فعال‌سازی لایسنس</h3>
+            <div class="form-group">
+                <input type="text" id="licenseInput" class="form-control" placeholder="کلید لایسنس را وارد کنید">
+            </div>
+            <button id="activateLicense" class="btn btn-primary">
+                <i class="fas fa-check"></i> فعال‌سازی لایسنس
+            </button>
+            <div class="license-status">
+                وضعیت: <span id="licenseStatus" class="status-inactive">غیرفعال</span>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="form-group">
+                <label for="pairSelect">انتخاب جفت ارز:</label>
+                <select id="pairSelect" class="form-control">
+                    <option value="">لطفاً انتخاب کنید</option>
+                </select>
+            </div>
+            
+            <div class="button-group">
+                <button id="btnStart" class="btn btn-start">
+                    <i class="fas fa-play"></i> فعال‌سازی
+                </button>
+                <button id="btnStop" class="btn btn-stop" disabled>
+                    <i class="fas fa-stop"></i> غیرفعال
+                </button>
+                <button id="btnSettings" class="btn btn-settings">
+                    <i class="fas fa-cog"></i> تنظیمات
+                </button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="status-row">
+                <span>زمان تا سیگنال بعدی:</span>
+                <strong id="countdown">--:--</strong>
+            </div>
+            
+            <div class="signal-container">
+                <div id="currentPair" class="pair-display">—</div>
+                <div id="signal" class="signal neutral">
+                    <i class="fas fa-sync-alt"></i>
+                </div>
+                <div id="confidence" class="confidence">اعتبار: —</div>
+            </div>
+            
+            <div id="bars" class="bars"></div>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <span>سیگنال‌های امروز:</span>
+                    <strong id="todaySignals">0</strong>
+                </div>
+                <div class="stat-item">
+                    <span>وضعیت:</span>
+                    <strong id="status">قطع</strong>
+                </div>
+                <div class="stat-item">
+                    <span>اتصال بروکر:</span>
+                    <strong id="brokerStatus">قطع</strong>
+                </div>
+            </div>
+            
+            <div class="mode-display">
+                <i class="fas fa-info-circle"></i>
+                حالت: <span id="mode">--</span>
+            </div>
+        </div>
+
+        <div class="settings-panel" id="settingsPanel">
+            <h3><i class="fas fa-sliders-h"></i> تنظیمات پیشرفته</h3>
+            
+            <div class="setting-item">
+                <label>حداقل اعتماد سیگنال:</label>
+                <input type="range" id="minConfidence" min="50" max="95" value="75">
+                <span id="minConfidenceValue">75%</span>
+            </div>
+            
+            <div class="setting-item">
+                <label>حساسیت استراتژی:</label>
+                <input type="range" id="strategySensitivity" min="1" max="10" value="6">
+                <span id="sensitivityValue">6</span>
+            </div>
+            
+            <div class="setting-item">
+                <label>
+                    <input type="checkbox" id="soundEnabled" checked>
+                    صدای اعلان
+                </label>
+            </div>
+            
+            <div class="setting-item">
+                <label>
+                    <input type="checkbox" id="notificationsEnabled" checked>
+                    نوتیفیکیشن مرورگر
+                </label>
+            </div>
+
+            <button id="saveSettings" class="btn btn-primary">
+                <i class="fas fa-save"></i> ذخیره تنظیمات
+            </button>
+            <button id="closeSettings" class="btn btn-secondary">
+                <i class="fas fa-times"></i> بستن
+            </button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
+    <script src="./license-manager.js"></script>
+    <script src="./quotex-api.js"></script>
+    <script src="./app.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script>
+        // Redirect to main page
+        var repoName = window.location.pathname.split('/')[1];
+        if (repoName) {
+            location.replace('/' + repoName + '/');
+        } else {
+            location.replace('./');
+        }
+    </script>
+</head>
+<body>
+    <p>در حال انتقال به صفحه اصلی...</p>
+</body>
+</html>
